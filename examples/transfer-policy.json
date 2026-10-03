@@ -1,0 +1,37 @@
+{
+  "version": "transfer-v1",
+  "rules": [
+    {
+      "id": "known_currency",
+      "pointer": "/currency",
+      "check": {
+        "type": "one_of",
+        "values": ["CAD", "USD"]
+      }
+    },
+    {
+      "id": "bounded_amount",
+      "pointer": "/amount",
+      "check": {
+        "type": "number_range",
+        "min": 0.01,
+        "max": 5000.0
+      }
+    },
+    {
+      "id": "short_memo",
+      "pointer": "/memo",
+      "check": {
+        "type": "string_length",
+        "max": 40
+      }
+    },
+    {
+      "id": "no_admin_override",
+      "pointer": "/admin_override",
+      "check": {
+        "type": "absent"
+      }
+    }
+  ]
+}

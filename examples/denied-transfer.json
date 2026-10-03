@@ -1,0 +1,6 @@
+{
+  "currency": "EUR",
+  "amount": 9000,
+  "memo": "attempted override",
+  "admin_override": true
+}
